@@ -1,0 +1,89 @@
+@use 'variables' as *;
+
+
+%box-extend {
+	width:100%;
+	min-height:150px;
+}
+@mixin themebox($themebox: $gray) {
+	background:$themebox;
+	box-shadow: 0 0 1px rgba($themebox, .25);
+	color:$white;
+	@extent %box-extend
+}
+.box-comman {
+	@include themebox;
+}
+
+.box-danger {
+	@include themebox($themebox: #f10101);
+}
+.box-success {
+	@include themebox($themebox: green);
+}
+
+@mixin imgw {
+    width: 100%;
+    height: 100%;
+}
+@mixin mp-0 {
+	margin:0px;
+	padding:0px;
+}
+@mixin mb-0 {
+	margin-bottom:0px;
+}
+@mixin pb-0 {
+	padding-bottom:0px;
+}
+@mixin bottom-mp {
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+
+@mixin lightbg  {
+	background: rgb($secondary-color-rgb / 25%) 
+}
+
+%subhding-extend {
+	font-size:24px;
+}
+
+%common-font {
+	font-size:14px;
+}
+
+%plan-shape {
+	position:absolute;
+	top:23px;
+	width:70px;
+	height:60px;
+	opacity:0.4;
+}
+%secure-card {
+	border-radius:20px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:20px;
+	min-height:100px;
+	height:100%;
+
+	img {
+		width:60px; 
+		height:60px;
+		object-fit:contain;
+	}
+}
+%footer-icon {
+	width:50px;
+	height:48px;
+	border:2px dashed $primary-color;
+	color:$primary-color;
+	border-radius:10px;
+	padding:5px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	text-decoration:none;
+}

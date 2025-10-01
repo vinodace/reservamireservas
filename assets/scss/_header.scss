@@ -1,0 +1,129 @@
+
+@use 'variables' as *;
+@use 'responsive' as *;
+@use 'mixins' as *;
+
+header {
+	padding:20px 0;
+
+	.navbar-brand {
+		width:260px;
+		
+		@include responsive_breakpoint(max-md){
+			width:190px;
+		}
+	}
+	.navbar-toggler-icon {
+		width:16px;
+		height:24px;
+	}
+	.translate-dropdown {
+
+		.translate-img {
+			width:40px;
+			height:40px;
+			object-fit:contain;
+			margin:0 15px 0 0;
+			cursor:pointer;
+
+			@include responsive_breakpoint(max-md){
+				width:46px;
+				height:46px;
+			}
+		}
+		.dropdown-menu {
+			border:none;
+			width:200px;
+			font-size:14px;
+
+			@include responsive_breakpoint(max-md){
+				margin-left:-37px;
+			}
+			a.dropdown-item {
+				margin-bottom:8px;
+			}
+			img {
+				width:28px;
+				height:28px;
+				object-fit:contain;
+				border-radius:50%;
+				margin-right:10px;
+			}
+		}
+	}
+	.header-btn { 
+		background: $secondary-color; 
+		border:1px solid $secondary-color; 
+		color:$white !important; 
+		text-decoration: none; 
+		font-size:13px !important; 
+		font-weight: 600; 
+		padding:8px 20px !important; 
+		border-radius: 40px; transition: 
+		color 0.3s ease, box-shadow 0.4s ease; 
+		position: relative; 
+		margin-right: 25px;
+		
+		@include responsive_breakpoint(max-md){
+			display:inline-block;
+			margin-top:5px;
+		}
+	}
+	.header-btn[data-lang="es"] {
+		font-size: 12px !important;
+		padding: 8px 15px !important;
+		text-align:center;
+	}
+
+}	
+
+nav {
+	.header-tollfree {
+		position: relative;
+		display: flex; 
+		align-items: center;
+		gap: 10px; 
+		text-decoration: none; 
+		color: #000;  
+
+		@include responsive_breakpoint(max-md) {
+			margin-top:20px;
+		}
+
+		img {
+			width: 40px; 
+			height: 40px; 
+			object-fit: contain;
+		}
+		p {
+			margin: 0; 
+			padding: 0; 
+			font-size: 13px;
+		}
+		span {
+			font-size:18px; 
+			font-weight: 900; 
+			color: $primary-color;
+			}
+	}
+}
+
+.header-navbar {
+	@include mp-0;
+
+	li {
+		list-style:none;
+
+		a{
+			padding:10px 15px !important;
+			font-size:14px;
+
+		}
+		a.active {
+				color:$primary-color !important;
+		}
+		a[data-lang="es"] {
+			font-size:14px !important;;
+		}
+	}
+}
